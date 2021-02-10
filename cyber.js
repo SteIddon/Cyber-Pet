@@ -37,15 +37,15 @@ class Animal {
         console.log(this.name, "has a big drink of water")
         this.thirst = this.thirst -5;
         this.boredom = this.boredom -1;
-        this.happiness = this.happiness = +5;
-        this.energy = this.energy = +1;
+        this.happiness = this.happiness -5;
+        this.energy = this.energy -1;
         return this;
     } else {
         console.log(this.name, "is quenched!")
         return this;
     }}
     sleep(){
-        if (this.energy < 50){
+        if (this.energy <= 50){
         console.log(this.name, "went to sleep")
         this.energy = this.energy +5;
         this.hunger = this.hunger +1;
@@ -59,6 +59,7 @@ class Animal {
     }}
     checkStatus(){
         console.log("NAME:", this.name, "Happiness:", this.happiness, "Energy:", this.energy, "Hunger:", this.hunger, "Thirst:", this.thirst, "Boredom:", this.boredom)
+        return this;
     }
 }
 class Dog extends Animal {
@@ -95,15 +96,9 @@ class Rabbit extends Animal {
 const Zola = new Dog("Zola");
 const Luna = new Cat("Luna");
 const Hopper = new Rabbit("Hopper");
-Zola.eat().play().play().play()
-Luna.play().drink().eat().sleep().eat().eat().sleep().sleep().checkStatus()
-Hopper.drink().drink().drink().drink().drink().drink().drink().drink().drink().drink().drink().drink().drink().drink().drink()
-Zola.checkStatus(Zola);
-Luna.checkStatus();
-Hopper.checkStatus();
-
-
-
+Zola.play().checkStatus().eat().checkStatus().drink().checkStatus().sleep().checkStatus()
+Luna.play().checkStatus().eat().checkStatus().drink().checkStatus().sleep().checkStatus()
+Hopper.play().checkStatus().eat().checkStatus().drink().checkStatus().sleep().checkStatus()
 
 
 
