@@ -7,57 +7,43 @@ class Animal {
     }
     eat(){
         if (this.hungry === true) {
-        console.log(this.name, "is now enjoying some food")
+        console.log(this.name, "is enjoying some food")
         this.hungry = false;
+        return this;
         } else {
             console.log(this.name, "is already full")
+            return this;
         }
     }
     play(){
         if (this.bored === true){
         console.log(this.name, "is now having fun")
         this.bored = false;
+        return this;
         } else {
             console.log(this.name, "is tired from all the playing")
+            return this;
         }
     }
     drink(){
         if (this.thirsty === true){
-        console.log(this.name, "Has a big drink of water")
+        console.log(this.name, "has a big drink of water")
         this.thirsty = false;
+        return this;
     } else {
-        console.log(this.name, "'s thirst is already quenched!")
+        console.log(this.name, "is quenched!")
+        return this;
     }}
-    updateStatus(){
-        if (this.thirsty === false, this.bored === false, this.hungry === false){
+    updateStatus(){ // invoke this function when pet has been left alone for too long
+        if (this.thirsty === false || this.bored === false || this.hungry === false){
             this.thirsty = true, this.bored = true, this.hungry = true;
             console.log("status' changed to true");
+            return this;
         }
     }
 }
 let zola = new Animal("Zola");
-console.log(zola.drink());
-console.log(zola.drink());
-console.log(zola.eat());
-console.log(zola.eat());
-console.log(zola.play());
-console.log(zola.play());
-console.log(zola.updateStatus());
-console.log(zola.drink());
-console.log(zola.drink());
-console.log(zola.eat());
-console.log(zola.eat());
-console.log(zola.play());
-console.log(zola.play());
-
-
-
-
-
-
-
-
-
+zola.drink().play().eat().drink().eat().play().updateStatus().drink().play().eat().updateStatus().drink().updateStatus().drink();
 
 
 // class Animal {
