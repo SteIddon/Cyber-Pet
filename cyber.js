@@ -9,26 +9,28 @@ class Animal {
         if (this.hungry === true) {
         console.log(this.name, "is enjoying some food")
         this.hungry = false;
+        this.bored = true;
         return this;
         } else {
             console.log(this.name, "is already full")
             return this;
-        }
-    }
+    }}
     play(){
         if (this.bored === true){
         console.log(this.name, "is now having fun")
         this.bored = false;
+        this.thirsty = true;
+        this.hungry = true;
         return this;
         } else {
             console.log(this.name, "is tired from all the playing")
             return this;
-        }
-    }
+    }}
     drink(){
         if (this.thirsty === true){
         console.log(this.name, "has a big drink of water")
         this.thirsty = false;
+        this.bored = true;
         return this;
     } else {
         console.log(this.name, "is quenched!")
@@ -42,8 +44,30 @@ class Animal {
         }
     }
 }
-let zola = new Animal("Zola");
-zola.drink().play().eat().drink().eat().play().updateStatus().drink().play().eat().updateStatus().drink().updateStatus().drink();
+class Dog extends Animal {
+    constructor(name) {
+        super(name)
+        this.hungry = true;
+        this.thirsty = true;
+        this.bored = true;
+    }
+}
+class Cat extends Animal {
+    constructor(name) {
+        super(name)
+        this.hungry = true;
+        this.thirsty = true;
+        this.bored = true;
+    }
+}
+
+const Zola = new Dog("Zola");
+const Luna = new Cat("Luna");
+Zola.drink().play().eat().drink().eat().play().updateStatus().drink().play().eat().updateStatus().drink().updateStatus().drink();
+Luna.drink().play().eat().play().drink().play().eat().eat()
+
+
+
 
 
 // class Animal {
