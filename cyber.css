@@ -1,7 +1,37 @@
 body {
     margin:0;
     padding:0;
+    background-color:lime;
+    text-align: center;
 }
-#petname, #rab, #dog, #cat, #status, #sleep, #feed, #play, #drink, #check, #pet {
+#rab, #dog, #cat, #status, #sleep, #feed, #play, #drink, #check, #pet {
     display:none;
+}
+h1 {
+    text-align: center;
+    font-family: monospace;
+    font-size: 5em;
+    color: brown;
+}
+#petname, #status {
+    color: red;
+    font-family: monospace;
+    font-size: 2em;
+}
+#options, #actions {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+}
+#options {
+    justify-content: space-between;
+    position: fixed;
+    left: 38%;
+}
+#actions {
+    justify-content: space-evenly;
+    position: fixed;
+    top: 32%;
+    left: 37%;
 }
