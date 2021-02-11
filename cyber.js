@@ -9,64 +9,63 @@ class Animal {
     }
     eat() {
         if (this.hunger > 5) {
-            statusBar.textContent = `${P.name} ate some food`
             this.hunger = this.hunger - 5;
             this.boredom = this.boredom - 1;
             this.happiness = this.happiness + 5;
             this.energy = this.energy + 5;
-            return this;
+            return `${this.name} ate some food`
         } else {
-            statusBar.textContent = `${P.name} is too full`
-            return this;
+            return `${this.name} is too full`
         }
     }
     play() {
         if (this.boredom > 4 & this.energy > 4) {
-            statusBar.textContent = `${P.name} is playing`
             this.boredom = this.boredom - 5;
             this.thirst = this.thirst + 5;
             this.hunger = this.hunger + 5;
             this.happiness = this.happiness + 5;
             this.energy = this.energy - 5;
-            return this;
+            return `${this.name} is playing`
         } else {
-            statusBar.textContent = `${P.name} is tired of playing`
-
-            return this;
+            return `${this.name} is tired of playing`
         }
     }
     drink() {
         if (this.thirst > 4) {
-            statusBar.textContent = `${P.name} took a sip of water`
             this.thirst = this.thirst - 5;
             this.boredom = this.boredom - 1;
             this.happiness = this.happiness - 5;
             this.energy = this.energy - 1;
-            return this;
+            return `${this.name} took a sip of water`
         } else {
-            statusBar.textContent = `${P.name} is quenched!`
-            return this;
+            return `${this.name} is quenched!`
+            
         }
     }
     sleep() {
         if (this.energy <= 50) {
-            statusBar.textContent = `${P.name} went to sleep`
             this.energy = this.energy + 5;
             this.hunger = this.hunger + 1;
             this.thirst = this.thirst + 1;
             this.boredom = this.boredom + 1;
             this.happiness = this.happiness + 1;
-            return this;
+            return `${this.name} went to sleep`
         } else {
-            statusBar.textContent = `${P.name} has had enough rest`
-            return this;
+            return `${this.name} has had enough rest`
         }
     }
     checkStatus() {
-        statusBar.textContent = `NAME: ${P.name}, Happiness: ${P.happiness}, Energy: ${P.energy}, Hunger: ${P.hunger}, Thirst: ${P.thirst}, Boredom: ${P.boredom}`
-        return this;
+        return `NAME: ${this.name}, Happiness: ${this.happiness}, Energy: ${this.energy}, Hunger: ${this.hunger}, Thirst: ${this.thirst}, Boredom: ${this.boredom}`
     }
+    leftAlone() {
+        if (this.energy > 4) {
+            this.hunger = this.hunger +5;
+            this.thirst = this.thirst +5;
+            this.boredom = this.boredom +5;
+            this.happiness = this.happiness -5;
+    }}
 }
+
 class Dog extends Animal {
     constructor(name) {
         super(name)
@@ -97,6 +96,6 @@ class Rabbit extends Animal {
         this.energy = 50;
     }
 }
-const Zola = new Dog("Zola");
-const Luna = new Cat("Luna");
-const Hopper = new Rabbit("Hopper");
+// const Zola = new Dog("Zola");
+// const Luna = new Cat("Luna");
+// const Hopper = new Rabbit("Hopper");
