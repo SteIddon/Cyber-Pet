@@ -1,0 +1,7 @@
+body {
+    margin:0;
+    padding:0;
+}
+#petname, #rab, #dog, #cat, #status, #sleep, #feed, #play, #drink, #check, #pet {
+    display:none;
+}

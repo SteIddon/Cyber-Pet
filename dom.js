@@ -1,42 +1,79 @@
 let newGame = document.getElementById("new");
-let changePet = document.getElementById("change");
+let selectDog = document.getElementById("dog");
+let selectCat = document.getElementById("cat");
+let selectRab = document.getElementById("rab");
 let getStatus = document.getElementById("check");
 let playPet = document.getElementById("play");
 let feedPet = document.getElementById("feed");
 let drinkPet = document.getElementById("drink");
+let sleepPet = document.getElementById("sleep");
 let statusBar = document.getElementById("status");
-let P = new Dog("Paul")
-// newGame.addEventListener("click", () => {
+let petDiv = document.getElementById("pet");
+let petName = document.getElementById("petname");
 
-// })
+newGame.addEventListener("click", () => {
+    selectDog.style.display = "block";
+    selectCat.style.display = "block";
+    selectRab.style.display = "block";
+})
 
-// changePet.addEventListener("click", () => {
+selectDog.addEventListener("click", () => {
+    selectDog.style.display = "none";
+    selectCat.style.display = "none";
+    selectRab.style.display = "none";
+    petName.style.display = "block";
+    getStatus.style.display = "block";
+    feedPet.style.display = "block";
+    drinkPet.style.display = "block";
+    sleepPet.style.display = "block";
+    statusBar.style.display = "block";
+    petDiv.style.display = "block";
+    petName.style.display = "block";
+})
+selectCat.addEventListener("click", () => {
+    selectDog.style.display = "none";
+    selectCat.style.display = "none";
+    selectRab.style.display = "none";
+    getStatus.style.display = "block";
+    feedPet.style.display = "block";
+    drinkPet.style.display = "block";
+    sleepPet.style.display = "block";
+    statusBar.style.display = "block";
+    petDiv.style.display = "block";
+    petName.style.display = "block";
 
-// })
+})
+selectRab.addEventListener("click", () => {
+    selectDog.style.display = "none";
+    selectCat.style.display = "none";
+    selectRab.style.display = "none";
+    getStatus.style.display = "block";
+    feedPet.style.display = "block";
+    drinkPet.style.display = "block";
+    sleepPet.style.display = "block";
+    statusBar.style.display = "block";
+    petDiv.style.display = "block";
+    petName.style.display = "block";
+
+})
+
 
 playPet.addEventListener("click", () => {
-    play();
-    getStatus.textContent = `${this.name} is playing`
+    P.play();
 })  
 
-// feedPet.addEventListener("click", () => {
-    
-// })
+feedPet.addEventListener("click", () => {
+    P.eat();
+})
 
-// drinkPet.addEventListener("click", () => {
-    
-// })
+drinkPet.addEventListener("click", () => {
+    P.drink();
+})
 
-// sleepPet.addEventListener("click", () => {
-
-// })
+sleepPet.addEventListener("click", () => {
+    P.sleep();
+})
 
 getStatus.addEventListener("click", () => {
      P.checkStatus();
-     console.log(this)
-    statusBar.textContent = `NAME: ${P.name}, Happiness: ${P.happiness}, Energy: ${P.energy}, Hunger: ${P.hunger}, Thirst: ${P.thirst}, Boredom: ${P.boredom}`;
-
 })
-// P.checkStatus();
-
-console.log(this)

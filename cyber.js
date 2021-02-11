@@ -9,20 +9,20 @@ class Animal {
     }
     eat() {
         if (this.hunger > 5) {
-            console.log(this.name, "is enjoying some food")
+            statusBar.textContent = `${P.name} ate some food`
             this.hunger = this.hunger - 5;
             this.boredom = this.boredom - 1;
             this.happiness = this.happiness + 5;
             this.energy = this.energy + 5;
             return this;
         } else {
-            console.log(this.name, "is already full")
+            statusBar.textContent = `${P.name} is too full`
             return this;
         }
     }
     play() {
         if (this.boredom > 4 & this.energy > 4) {
-            console.log(this.name, "is now playing and having fun!")
+            statusBar.textContent = `${P.name} is playing`
             this.boredom = this.boredom - 5;
             this.thirst = this.thirst + 5;
             this.hunger = this.hunger + 5;
@@ -30,26 +30,27 @@ class Animal {
             this.energy = this.energy - 5;
             return this;
         } else {
-            console.log(this.name, "is tired from all the playing")
+            statusBar.textContent = `${P.name} is tired of playing`
+
             return this;
         }
     }
     drink() {
         if (this.thirst > 4) {
-            console.log(this.name, "has a big drink of water")
+            statusBar.textContent = `${P.name} took a sip of water`
             this.thirst = this.thirst - 5;
             this.boredom = this.boredom - 1;
             this.happiness = this.happiness - 5;
             this.energy = this.energy - 1;
             return this;
         } else {
-            console.log(this.name, "is quenched!")
+            statusBar.textContent = `${P.name} is quenched!`
             return this;
         }
     }
     sleep() {
         if (this.energy <= 50) {
-            console.log(this.name, "went to sleep")
+            statusBar.textContent = `${P.name} went to sleep`
             this.energy = this.energy + 5;
             this.hunger = this.hunger + 1;
             this.thirst = this.thirst + 1;
@@ -57,12 +58,12 @@ class Animal {
             this.happiness = this.happiness + 1;
             return this;
         } else {
-            console.log(this.name, "has had enough rest")
+            statusBar.textContent = `${P.name} has had enough rest`
             return this;
         }
     }
     checkStatus() {
-        console.log("NAME:", this.name, "Happiness:", this.happiness, "Energy:", this.energy, "Hunger:", this.hunger, "Thirst:", this.thirst, "Boredom:", this.boredom)
+        statusBar.textContent = `NAME: ${P.name}, Happiness: ${P.happiness}, Energy: ${P.energy}, Hunger: ${P.hunger}, Thirst: ${P.thirst}, Boredom: ${P.boredom}`
         return this;
     }
 }
@@ -99,5 +100,3 @@ class Rabbit extends Animal {
 const Zola = new Dog("Zola");
 const Luna = new Cat("Luna");
 const Hopper = new Rabbit("Hopper");
-
-Zola.play().sleep().eat().checkStatus().play();
