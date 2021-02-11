@@ -22,16 +22,22 @@ h1 {
     display:flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
 }
 #options {
-    justify-content: space-between;
-    position: fixed;
-    left: 38%;
-}
-#actions {
+    width: 50%;
     justify-content: space-evenly;
     position: fixed;
-    top: 32%;
-    left: 37%;
+    left: 25%;
+    top: 40%;
+}
+#actions {
+    width: 40%;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 50%;
+    left: 30%;
+}
+#dog, #cat, #rab {
+    background-color: transparent;
+    border: none;
 }

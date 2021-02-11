@@ -12,6 +12,9 @@ let petDiv = document.getElementById("pet");
 let petName = document.getElementById("petname");
 let P // on its own = let P = undefined
 let img = 0;
+selectDog.innerHTML = `<img src="pet3.png">`;
+selectCat.innerHTML = `<img src="pet2.png">`;
+selectRab.innerHTML = `<img src="pet1.png">`;
 
 newGame.addEventListener("click", () => {
     newGame.style.display = "none";
@@ -81,7 +84,6 @@ selectRab.addEventListener("click", () => {
     petName.textContent =`Name : ${P.name}`;
     newGame.style.display = "block";
     petDiv.innerHTML = '<img src="pet' + img + '.png">';  
-
 })
 
 
