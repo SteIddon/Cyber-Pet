@@ -39,7 +39,6 @@ class Animal {
             return `${this.name} took a sip of water`
         } else {
             return `${this.name} is quenched!`
-            
         }
     }
     sleep() {
@@ -65,7 +64,6 @@ class Animal {
             this.happiness = this.happiness -5;
     }}
 }
-
 class Dog extends Animal {
     constructor(name) {
         super(name)
@@ -96,6 +94,23 @@ class Rabbit extends Animal {
         this.energy = 50;
     }
 }
-// const Zola = new Dog("Zola");
-// const Luna = new Cat("Luna");
-// const Hopper = new Rabbit("Hopper");
+class Snake extends Animal {
+    constructor(name) {
+        super(name)
+        this.hunger = 50;
+        this.thirst = 50;
+        this.boredom = 50;
+        this.happiness = 50;
+        this.energy = 50;
+    }
+}
+class Turtle extends Animal {
+    constructor(name) {
+        super(name)
+        this.hunger = 50;
+        this.thirst = 50;
+        this.boredom = 50;
+        this.happiness = 50;
+        this.energy = 50;
+    }
+}

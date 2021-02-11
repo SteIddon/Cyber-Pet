@@ -1,21 +1,21 @@
 body {
     margin:0;
     padding:0;
-    background-color:lime;
+    background-color:deepskyblue;
     text-align: center;
 }
-#rab, #dog, #cat, #status, #sleep, #feed, #play, #drink, #check, #pet {
+#snake, #turtle, #rab, #dog, #cat, #status, #sleep, #feed, #play, #drink, #check, #pet {
     display:none;
 }
 h1 {
     text-align: center;
-    font-family: monospace;
+    font-family: cursive;
     font-size: 5em;
-    color: brown;
+    color: salmon;
 }
 #petname, #status {
-    color: red;
-    font-family: monospace;
+    color: salmon;
+    font-family:cursive;
     font-size: 2em;
 }
 #options, #actions {
@@ -37,7 +37,20 @@ h1 {
     top: 50%;
     left: 30%;
 }
-#dog, #cat, #rab {
+#snake, #turtle, #dog, #cat, #rab {
     background-color: transparent;
     border: none;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: smaller;
+    }
+    #options {
+        top: 60%;
+        flex-direction: column;
+    }
+    #actions {
+        top: 70%;
+    }
 }
