@@ -135,9 +135,9 @@ selectTur.addEventListener("click", () => {
     newGame.style.display = "block";
     petDiv.innerHTML = '<img src="pet' + img + '.png">';  
 })
-addEventListener("keypress", () => {
-    setInterval(P.startTimer(), 5000);
-    statusBar.textContent = P.startTimer();
+petDiv.addEventListener("click", () => {
+    setInterval(P.startTimer(), 3000)
+        statusBar.textContent = P.startTimer();
 });
 
 playPet.addEventListener("click", () => {
