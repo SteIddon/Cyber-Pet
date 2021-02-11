@@ -20,6 +20,7 @@ selectRab.innerHTML = `<img src="pet1.png">`;
 selectSna.innerHTML = `<img src="pet4.png">`;
 selectTur.innerHTML = `<img src="pet5.png">`;
 
+
 newGame.addEventListener("click", () => {
     newGame.style.display = "none";
     selectDog.style.display = "block";
@@ -37,7 +38,6 @@ newGame.addEventListener("click", () => {
     sleepPet.style.display = "none";
     statusBar.textContent = "";
     statusBar.style.display = "none";
-    setInterval(P.leftAlone(), 1000);
 })
 
 selectDog.addEventListener("click", () => {
@@ -123,7 +123,7 @@ selectTur.addEventListener("click", () => {
     selectDog.style.display = "none";
     selectCat.style.display = "none";
     selectRab.style.display = "none";
-    selectSnek.style.display = "none";
+    selectSna.style.display = "none";
     selectTur.style.display = "none";
     getStatus.style.display = "block";
     feedPet.style.display = "block";
@@ -135,7 +135,10 @@ selectTur.addEventListener("click", () => {
     newGame.style.display = "block";
     petDiv.innerHTML = '<img src="pet' + img + '.png">';  
 })
-
+addEventListener("keypress", () => {
+    setInterval(P.startTimer(), 5000);
+    statusBar.textContent = P.startTimer();
+});
 
 playPet.addEventListener("click", () => {
     statusBar.textContent = P.play();
