@@ -41,13 +41,16 @@ h1 {
     background-color: transparent;
     border: none;
 }
-#play:hover, #feed:hover, #drink:hover, #sleep:hover, #check:hover, #new:hover {
+#play:hover, #feed:hover, #drink:hover, #sleep:hover, #check:hover, #new:hover, #snake:hover, #turtle:hover, #dog:hover, #cat:hover, #rab:hover {
     animation: shake 0.5s infinite;
 }
 #play, #feed, #drink, #sleep, #check, #new {
     background-color: red;
     border-radius: 50%;
     height: 30px;
+    font-family: monospace;
+    color: whitesmoke;
+    border: none;
 }
 
 @keyframes shake {
