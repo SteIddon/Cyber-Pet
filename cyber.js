@@ -57,18 +57,17 @@ class Animal {
         return `NAME: ${this.name}, Happiness: ${this.happiness}, Energy: ${this.energy}, Hunger: ${this.hunger}, Thirst: ${this.thirst}, Boredom: ${this.boredom}`
         }
     startTimer() {
-        if (this.energy > 10) {
-            this.energy = this.energy - 10;
-            this.hunger = this.hunger + 10;
-            this.thirst = this.thirst + 10;
-            this.boredom = this.boredom + 10;
-            this.happiness = this.happiness - 10;
+            this.energy = this.energy -5;
+            this.hunger = this.hunger +5;
+            this.thirst = this.thirst +5;
+            this.boredom = this.boredom +5;
+            this.happiness = this.happiness -5;
+            console.log("loop");
             return `${this.name} is getting bored`
-        } else {
-            return `${this.name} doesn't like being left alone`
+            // return `${this.name} doesn't like being left alone`
         }
     }
-}
+
 class Dog extends Animal {
     constructor(name) {
         super(name)

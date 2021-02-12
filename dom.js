@@ -135,8 +135,8 @@ selectTur.addEventListener("click", () => {
     newGame.style.display = "block";
     petDiv.innerHTML = '<img src="pet' + img + '.png">';  
 })
-petDiv.addEventListener("click", () => {
-    setInterval(P.startTimer(), 3000)
+selectDog.addEventListener("click", () => {
+    setInterval((P.startTimer(), 3000));
         statusBar.textContent = P.startTimer();
 });
 
