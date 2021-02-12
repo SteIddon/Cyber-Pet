@@ -13,10 +13,28 @@ h1 {
     font-size: 5em;
     color: red;
 }
-#petname, #status {
+#petname {
     color: red;
     font-family:cursive;
     font-size: 2em;
+}
+#status {
+    color:whitesmoke;
+    font-family: monospace;
+    font-size: 1.5em;
+}
+#stats {
+    color: red;
+    display: flex;
+    flex-direction: column;
+    text-align:left;
+    width: 100px;
+    display:none;
+    margin-left: 50mm;
+}
+#time {
+    color: yellow;
+    font-size: 1.5em;
 }
 #options, #actions {
     display:flex;
