@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Cyber Pet Game</h1>
+        <h1>Cyber Pet</h1>
         <div id="petname"> Click the button to start a new game </div> 
     </header>
 
@@ -31,9 +31,21 @@
     <button id="drink">Drink</button>
     <button id="sleep">Sleep</button>
     </div>
+    <div id="status"></div>
+    <div id="stats">
+        <label for="pethappystatus" class="petstatus" id="pethappy">Happiness:</label>
+            <progress class="petlevel" id="pethappystatus" max="100" value="50">  </progress>
+        <label for="pethungerstatus" class="petstatus" id="pethungry">Hunger:</label>
+            <progress class="petlevel" id="pethungerstatus" max="100" value="80">  </progress>
+        <label for="petthirststatus" class="petstatus" id="petthirsty">Thirst:</label>
+            <progress class="petlevel" id="petthirststatus" max="100" value="65">  </progress>
+        <label for="petboredstatus" class="petstatus" id="petbored">Boredom:</label>
+            <progress class="petlevel" id="petboredstatus" max="100" value="10">  </progress>
+        <label for="petenergystatus" class="petstatus" id="petenergy">Energy:</label>
+            <progress class="petlevel" id="petenergystatus" max="100" value="100">  </progress>
+    </div>
 
-    <div id="status"> Status Bar </div>
-
+    <div id="counter"> </div>
 
     <script src="cyber.js"></script>
     <script src="dom.js"></script>

@@ -6,67 +6,54 @@ class Animal {
         this.boredom = 50;
         this.happiness = 50;
         this.energy = 50;
+        this.seconds = 0;
     }
     eat() {
         if (this.hunger > 5) {
-            this.hunger = this.hunger - 5;
-            this.boredom = this.boredom - 1;
-            this.happiness = this.happiness + 5;
-            this.energy = this.energy + 5;
+        this.hunger - 5;
+        this.seconds = 0;
             return `${this.name} ate some food`
         } else {
             return `${this.name} is too full`
         }
     }
     play() {
-        if (this.boredom > 4 & this.energy > 4) {
-            this.boredom = this.boredom - 5;
-            this.thirst = this.thirst + 5;
-            this.hunger = this.hunger + 5;
-            this.happiness = this.happiness + 5;
-            this.energy = this.energy - 5;
+        if (this.boredom > 5) {
+        this.boredom - 5;
+        this.happiness + 5;
+        this.seconds = 0;
             return `${this.name} is playing`
         } else {
             return `${this.name} is tired of playing`
         }
     }
     drink() {
-        if (this.thirst > 4) {
-            this.thirst = this.thirst - 5;
-            this.boredom = this.boredom - 1;
-            this.happiness = this.happiness - 5;
-            this.energy = this.energy + 1;
+        if (this.thirst > 5) {
+            this.thirst - 5;
+            this.seconds = 0;
             return `${this.name} took a sip of water`
         } else {
             return `${this.name} is quenched!`
         }
     }
     sleep() {
-        if (this.energy <= 50) {
-            this.energy = this.energy + 5;
-            this.hunger = this.hunger + 1;
-            this.thirst = this.thirst + 1;
-            this.boredom = this.boredom + 1;
-            this.happiness = this.happiness + 1;
+        if (this.energy < 95) {
+            this.energy + 5;
+            this.seconds = 0;
             return `${this.name} went to sleep`
         } else {
             return `${this.name} has had enough rest`
         }
     }
     checkStatus() {
-        return `NAME: ${this.name}, Happiness: ${this.happiness}, Energy: ${this.energy}, Hunger: ${this.hunger}, Thirst: ${this.thirst}, Boredom: ${this.boredom}`
-        }
-    startTimer() {
-            this.energy = this.energy -5;
-            this.hunger = this.hunger +5;
-            this.thirst = this.thirst +5;
-            this.boredom = this.boredom +5;
-            this.happiness = this.happiness -5;
-            console.log("loop");
-            return `${this.name} is getting bored`
-            // return `${this.name} doesn't like being left alone`
+        return `${this.name} has been left alone for ${this.seconds} seconds`
         }
     }
+    function incrementSeconds() {
+            P.seconds += 1;
+            getTime.innerText = `${P.name} has been left alone for ${P.seconds} seconds. ${P.name} becomes sad if you don't keep playing with them`;
+        }
+
 
 class Dog extends Animal {
     constructor(name) {
@@ -76,6 +63,7 @@ class Dog extends Animal {
         this.boredom = 50;
         this.happiness = 50;
         this.energy = 50;
+        this.seconds = 0;
     }
 }
 class Cat extends Animal {
@@ -86,6 +74,7 @@ class Cat extends Animal {
         this.boredom = 50;
         this.happiness = 50;
         this.energy = 50;
+        this.seconds = 0;
     }
 }
 class Rabbit extends Animal {
@@ -96,6 +85,7 @@ class Rabbit extends Animal {
         this.boredom = 50;
         this.happiness = 50;
         this.energy = 50;
+        this.seconds = 0;
     }
 }
 class Snake extends Animal {
@@ -106,6 +96,7 @@ class Snake extends Animal {
         this.boredom = 50;
         this.happiness = 50;
         this.energy = 50;
+        this.seconds = 0;
     }
 }
 class Turtle extends Animal {
@@ -116,5 +107,7 @@ class Turtle extends Animal {
         this.boredom = 50;
         this.happiness = 50;
         this.energy = 50;
+        this.seconds = 0;
     }
 }
+

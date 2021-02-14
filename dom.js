@@ -2,6 +2,8 @@ let newGame = document.getElementById("new");
 let selectDog = document.getElementById("dog");
 let selectCat = document.getElementById("cat");
 let selectRab = document.getElementById("rab");
+let selectSna = document.getElementById("snake");
+let selectTur = document.getElementById("turtle");
 let getStatus = document.getElementById("check");
 let playPet = document.getElementById("play");
 let feedPet = document.getElementById("feed");
@@ -9,17 +11,22 @@ let drinkPet = document.getElementById("drink");
 let sleepPet = document.getElementById("sleep");
 let statusBar = document.getElementById("status");
 let petDiv = document.getElementById("pet");
+let petStats = document.getElementById("stats");
 let petName = document.getElementById("petname");
-let selectSna = document.getElementById("snake");
-let selectTur = document.getElementById("turtle");
+let petHappy = document.getElementById("pethappystatus");
+let petHungry = document.getElementById("pethungerstatus");
+let petThirsty = document.getElementById("petthirststatus");
+let petBored = document.getElementById("petboredstatus");
+let petEnergy = document.getElementById("petenergystatus");
 let P // on its own = let P = undefined
 let img = 0;
+var seconds = 0;
+var getTime = document.getElementById("counter");
 selectDog.innerHTML = `<img src="pet3.png">`;
 selectCat.innerHTML = `<img src="pet2.png">`;
 selectRab.innerHTML = `<img src="pet1.png">`;
 selectSna.innerHTML = `<img src="pet4.png">`;
 selectTur.innerHTML = `<img src="pet5.png">`;
-
 
 newGame.addEventListener("click", () => {
     newGame.style.display = "none";
@@ -30,14 +37,15 @@ newGame.addEventListener("click", () => {
     selectTur.style.display = "block";
     petName.style.display = "block";
     petName.textContent = "Choose your pet";
+    getTime.style.display = "none";
     playPet.style.display = "none";
     petDiv.style.display = "none";
     getStatus.style.display = "none";
     feedPet.style.display = "none";
     drinkPet.style.display = "none";
     sleepPet.style.display = "none";
+    petStats.style.display = "none";
     statusBar.textContent = "";
-    statusBar.style.display = "none";
 })
 
 selectDog.addEventListener("click", () => {
@@ -48,6 +56,8 @@ selectDog.addEventListener("click", () => {
     selectRab.style.display = "none";
     selectSna.style.display = "none";
     selectTur.style.display = "none";
+    getTime.style.display = "block";
+    petStats.style.display = "block";
     playPet.style.display = "block";
     getStatus.style.display = "block";
     feedPet.style.display = "block";
@@ -57,7 +67,7 @@ selectDog.addEventListener("click", () => {
     petDiv.style.display = "block";
     petName.textContent =`Name : ${P.name}`;
     newGame.style.display = "block";
-    petDiv.innerHTML = '<img src="pet' + img + '.png">';  
+    petDiv.innerHTML = '<img src="pet' + img + '.png">';
 })
 selectCat.addEventListener("click", () => {
     img = 2;
@@ -67,9 +77,11 @@ selectCat.addEventListener("click", () => {
     selectRab.style.display = "none";
     selectSna.style.display = "none";
     selectTur.style.display = "none";
+    petStats.style.display = "block";
     getStatus.style.display = "block";
     playPet.style.display = "block";
     feedPet.style.display = "block";
+    getTime.style.display = "block";
     drinkPet.style.display = "block";
     sleepPet.style.display = "block";
     statusBar.style.display = "block";
@@ -86,10 +98,12 @@ selectRab.addEventListener("click", () => {
     selectRab.style.display = "none";
     selectSna.style.display = "none";
     selectTur.style.display = "none";
+    petStats.style.display = "block";
     getStatus.style.display = "block";
     playPet.style.display = "block";
     feedPet.style.display = "block";
     drinkPet.style.display = "block";
+    getTime.style.display = "block";
     sleepPet.style.display = "block";
     statusBar.style.display = "block";
     petDiv.style.display = "block";
@@ -105,6 +119,8 @@ selectSna.addEventListener("click", () => {
     selectRab.style.display = "none";
     selectSna.style.display = "none";
     selectTur.style.display = "none";
+    petStats.style.display = "block";
+    getTime.style.display = "block";
     getStatus.style.display = "block";
     playPet.style.display = "block";
     feedPet.style.display = "block";
@@ -125,6 +141,8 @@ selectTur.addEventListener("click", () => {
     selectRab.style.display = "none";
     selectSna.style.display = "none";
     selectTur.style.display = "none";
+    petStats.style.display = "block";
+    getTime.style.display = "block";
     getStatus.style.display = "block";
     feedPet.style.display = "block";
     drinkPet.style.display = "block";
@@ -135,27 +153,46 @@ selectTur.addEventListener("click", () => {
     newGame.style.display = "block";
     petDiv.innerHTML = '<img src="pet' + img + '.png">';  
 })
-selectDog.addEventListener("click", () => {
-    setInterval((P.startTimer(), 3000));
-        statusBar.textContent = P.startTimer();
-});
+
+petHappy.value = 50;
+petHungry.value = 80;
+petThirsty.value = 80;
+petBored.value = 10;
+petEnergy.value = 100;
+
+function incrementSeconds() {
+    P.seconds += 1;
+    petHappy.value -=1;
+    petBored.value +=1;
+    petHungry.value +=1;
+    petThirsty.value +=1;
+    getTime.innerText = `${P.name} has been left alone for ${P.seconds} seconds. ${P.name} becomes sad if you don't keep engaged`;
+}
+
+var cancel = setInterval(incrementSeconds, 1000);
 
 playPet.addEventListener("click", () => {
     statusBar.textContent = P.play();
+    petHappy.value = petHappy.value + 5;
+    petEnergy.value = petEnergy.value - 5;
 })  
 
 feedPet.addEventListener("click", () => {
     statusBar.textContent = P.eat();
+    petHungry.value = petHungry.value - 5;
 })
 
 drinkPet.addEventListener("click", () => {
     statusBar.textContent = P.drink();
+    petThirsty.value = petThirsty.value - 5;
 })
 
 sleepPet.addEventListener("click", () => {
     statusBar.textContent = P.sleep();
+    petEnergy.value = petEnergy.value + 5;
 })
 
 getStatus.addEventListener("click", () => {
     statusBar.textContent = P.checkStatus();
 })
+
