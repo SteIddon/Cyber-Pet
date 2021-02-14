@@ -93,13 +93,27 @@ h1 {
 
 @media screen and (max-width: 480px) {
     body {
+        width: 100vw;
+        height: 100vw;
         font-size: smaller;
     }
+    h1 {
+        margin:0;
+    }
+    #stats {
+        margin:0;
+    }
     #options {
-        top: 60%;
         flex-direction: column;
+        margin: 5%;
+        top: 30%;
     }
     #actions {
-        top: 70%;
+        top: 45%;
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 900px) {
+    body {
+        font-size: smaller;
     }
 }
