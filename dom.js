@@ -20,6 +20,8 @@ let petBored = document.getElementById("petboredstatus");
 let petEnergy = document.getElementById("petenergystatus");
 let P // on its own = let P = undefined
 let img = 0;
+var seconds = 0;
+var getTime = document.getElementById("counter");
 selectDog.innerHTML = `<img src="pet3.png">`;
 selectCat.innerHTML = `<img src="pet2.png">`;
 selectRab.innerHTML = `<img src="pet1.png">`;
@@ -35,6 +37,7 @@ newGame.addEventListener("click", () => {
     selectTur.style.display = "block";
     petName.style.display = "block";
     petName.textContent = "Choose your pet";
+    getTime.style.display = "none";
     playPet.style.display = "none";
     petDiv.style.display = "none";
     getStatus.style.display = "none";
@@ -53,6 +56,7 @@ selectDog.addEventListener("click", () => {
     selectRab.style.display = "none";
     selectSna.style.display = "none";
     selectTur.style.display = "none";
+    getTime.style.display = "block";
     petStats.style.display = "block";
     playPet.style.display = "block";
     getStatus.style.display = "block";
@@ -77,6 +81,7 @@ selectCat.addEventListener("click", () => {
     getStatus.style.display = "block";
     playPet.style.display = "block";
     feedPet.style.display = "block";
+    getTime.style.display = "block";
     drinkPet.style.display = "block";
     sleepPet.style.display = "block";
     statusBar.style.display = "block";
@@ -98,6 +103,7 @@ selectRab.addEventListener("click", () => {
     playPet.style.display = "block";
     feedPet.style.display = "block";
     drinkPet.style.display = "block";
+    getTime.style.display = "block";
     sleepPet.style.display = "block";
     statusBar.style.display = "block";
     petDiv.style.display = "block";
@@ -114,6 +120,7 @@ selectSna.addEventListener("click", () => {
     selectSna.style.display = "none";
     selectTur.style.display = "none";
     petStats.style.display = "block";
+    getTime.style.display = "block";
     getStatus.style.display = "block";
     playPet.style.display = "block";
     feedPet.style.display = "block";
@@ -135,6 +142,7 @@ selectTur.addEventListener("click", () => {
     selectSna.style.display = "none";
     selectTur.style.display = "none";
     petStats.style.display = "block";
+    getTime.style.display = "block";
     getStatus.style.display = "block";
     feedPet.style.display = "block";
     drinkPet.style.display = "block";
@@ -151,6 +159,17 @@ petHungry.value = 80;
 petThirsty.value = 80;
 petBored.value = 10;
 petEnergy.value = 100;
+
+function incrementSeconds() {
+    P.seconds += 1;
+    petHappy.value -=1;
+    petBored.value +=1;
+    petHungry.value +=1;
+    petThirsty.value +=1;
+    getTime.innerText = `${P.name} has been left alone for ${P.seconds} seconds. ${P.name} becomes sad if you don't keep engaged`;
+}
+
+var cancel = setInterval(incrementSeconds, 1000);
 
 playPet.addEventListener("click", () => {
     statusBar.textContent = P.play();
@@ -177,6 +196,3 @@ getStatus.addEventListener("click", () => {
     statusBar.textContent = P.checkStatus();
 })
 
-
-// setInterval((P.startTimer(), 1000))
-// timeAlive.textContent = P.startTimer();

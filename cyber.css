@@ -4,7 +4,7 @@ body {
     background-color:deepskyblue;
     text-align: center;
 }
-#snake, #turtle, #rab, #dog, #cat, #status, #sleep, #feed, #play, #drink, #check, #pet {
+#counter, #snake, #turtle, #rab, #dog, #cat, #status, #sleep, #feed, #play, #drink, #check, #pet {
     display:none;
 }
 h1 {
@@ -18,10 +18,16 @@ h1 {
     font-family:cursive;
     font-size: 2em;
 }
-#status {
+#status, #counter {
     color:whitesmoke;
     font-family: monospace;
     font-size: 1.5em;
+}
+#counter {
+    text-align: center;
+    position: fixed;
+    top: 60%;
+    right: 30%;
 }
 #stats {
     color: red;
