@@ -175,6 +175,7 @@ playPet.addEventListener("click", () => {
     statusBar.textContent = P.play();
     petHappy.value = petHappy.value + 5;
     petEnergy.value = petEnergy.value - 5;
+    petBored.value = petBored.value - 5;
 })  
 
 feedPet.addEventListener("click", () => {
